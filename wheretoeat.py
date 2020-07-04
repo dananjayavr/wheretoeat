@@ -1,6 +1,6 @@
 # import random library to choose an item from the array at random
 import random
-
+from restaurants import RESTAURANTS
 
 class WhereToEatBot:
     # Creating default text of the Slack message
@@ -14,15 +14,6 @@ class WhereToEatBot:
         },
     }
 
-    RESTAURANTS = [
-        "Pères Populaires",
-        "Japanese",
-        "Italian",
-        "Pizza",
-        "Bo-bun",
-        "Boulangerie",
-        "Couscous",
-    ]
 
     def __init__(self, channel):
         self.channel = channel
