@@ -19,6 +19,14 @@ def choose_restaurant(channel):
     slack_web_client.chat_postMessage(**message)
 
 
+def choose_yelp_restaurant(channel):
+    wheretoeat = WhereToEatBot(channel)
+
+    message = wheretoeat.get_yelp_message_payload()
+
+    slack_web_client.chat_postMessage(**message)
+
+
 @slack_events_adapter.on("message")
 def message(payload):
     event = payload.get("event", {})
@@ -26,10 +34,16 @@ def message(payload):
     text = event.get("text")
 
     # if "where to eat" in text.lower():
-    if text.lower().find("eat") > 0:
+    if "where to eat" in text.lower():
         channel_id = event.get("channel")
 
         return choose_restaurant(channel_id)
+
+    elif "find me another place in yelp" in text.lower():
+        logger.debug("Yelp hit")
+        channel_id = event.get("channel")
+
+        return choose_yelp_restaurant(channel_id)
 
 
 if __name__ == "__main__":
