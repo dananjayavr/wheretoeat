@@ -6,5 +6,5 @@
  
  Example : 
  
- [screenshot]: https://i.imgur.com/65YVAMV.png
+ [screenshot]: https://i.imgur.com/5FfcVU6.png
  ![Slack Screenshot][screenshot]
