@@ -40,7 +40,6 @@ def message(payload):
         return choose_restaurant(channel_id)
 
     elif "find me another place in yelp" in text.lower():
-        logger.debug("Yelp hit")
         channel_id = event.get("channel")
 
         return choose_yelp_restaurant(channel_id)
