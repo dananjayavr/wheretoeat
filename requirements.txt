@@ -14,6 +14,6 @@ pyee==7.0.2
 requests==2.24.0
 slackclient==2.7.2
 slackeventsapi==2.2.0
-urllib3==1.25.9
+urllib3==1.26.5
 Werkzeug==1.0.1
 yarl==1.4.2
